@@ -1,0 +1,17 @@
+
+#Ramsome
+#* * * * * ~/proyecto/automatizaciones/rasome/run_ramsome.sh >> ~/proyecto/automatizaciones/rasome/run_ramsomebd.log 2>&1
+#* * * * * ~/proyecto/automatizaciones/ramsomData/ramsomData.sh >> ~/proyecto/automatizaciones/ramsomData/ramsomData.log 2>&1
+#VULS
+#* * * * * ~/proyecto/automatizaciones/vuls/raspadoVuls.sh >> ~/proyecto/automatizaciones/vuls/raspadoVuls.log 2>&1
+#* * * * * ~/proyecto/automatizaciones/vulsData/vulsData.sh >> ~/proyecto/automatizaciones/vulsData/vulsData.log 2>&1
+#exploit
+#* * * * * ~/proyecto/automatizaciones/exploit/exploit.sh >> ~/proyecto/automatizaciones/exploit/exploit.log 2>&1
+#* * * * * ~/proyecto/automatizaciones/exploitDATA/exploitdata.sh >> ~/proyecto/automatizaciones/exploitDATA/exploitdata.log 2>&1
+#ciber
+#* * * * * ~/proyecto/automatizaciones/ciber/ciber.sh >> ~/proyecto/automatizaciones/ciber/ciber.log 2>&1
+#* * * * * ~/proyecto/automatizaciones/ciberdata/ciberdata.sh >> ~/proyecto/automatizaciones/ciberdata/ciberdata.log 2>&1
+#map
+#* * * * * cd ~/proyecto/ciber && /usr/bin/python3 map.py >> ~/proyecto/ciber/map.log 2>&1 && docker cp ../apache/public-html/mapa.html  apache:/var/www/html/mapa.html >> ~/proyecto/ciber/map.log 2>&1
+
+

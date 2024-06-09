@@ -1,0 +1,122 @@
+[
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20405",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco Finesse could allow an unauthenticated, remote attacker to conduct a stored XSS attack by exploiting an RFI vulnerability. \r\n\r This vulnerability is due to insufficient validation of user-supplied input for specific HTTP requests that are sent to an affected device. An attacker could exploit this vulnerability by persuading a user to click a crafted link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive information on the affected device.  Published:  June 05, 2024; 1:15:12 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20404",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco Finesse could allow an unauthenticated, remote attacker to conduct an SSRF attack on an affected system.\r\n\r This vulnerability is due to insufficient validation of user-supplied input for specific HTTP requests that are sent to an affected system. An attacker could exploit this vulnerability by sending a crafted HTTP request to the affected device. A successful exploit could allow the attacker to obtain limited sensitive information for services that are associated to the affected device.  Published:  June 05, 2024; 1:15:11 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20360",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco Firepower Management Center (FMC) Software could allow an authenticated, remote attacker to conduct SQL injection attacks on an affected system. This vulnerability exists because the web-based management interface does not adequately validate user input. An attacker could exploit this vulnerability by authenticating to the application and sending crafted SQL queries to an affected system. A successful exploit could allow the attacker to obtain any data from the database, execute arbitrary commands on the underlying operating system, and elevate privileges to root. To exploit this vulnerability, an attacker would need at least Read Only user credentials.  Published:  May 22, 2024; 2:15:09 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.1:  8.8 HIGH      V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20363",
+        "Resumen": "Multiple Cisco products are affected by a vulnerability in the Snort Intrusion Prevention System (IPS) rule engine that could allow an unauthenticated, remote attacker to bypass the configured rules on an affected system. This vulnerability is due to incorrect HTTP packet handling. An attacker could exploit this vulnerability by sending crafted HTTP packets through an affected device. A successful exploit could allow the attacker to bypass configured IPS rules and allow uninspected traffic onto the network.  Published:  May 22, 2024; 1:16:13 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20361",
+        "Resumen": "A vulnerability in the Object Groups for Access Control Lists (ACLs) feature of Cisco Firepower Management Center (FMC) Software could allow an unauthenticated, remote attacker to bypass configured access controls on managed devices that are running Cisco Firepower Threat Defense (FTD) Software. This vulnerability is due to the incorrect deployment of the Object Groups for ACLs feature from Cisco FMC Software to managed FTD devices in high-availability setups. After an affected device is rebooted following Object Groups for ACLs deployment, an attacker can exploit this vulnerability by sending traffic through the affected device. A successful exploit could allow the attacker to bypass configured access controls and successfully send traffic to devices that are expected to be protected by the affected device.  Published:  May 22, 2024; 1:16:13 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20355",
+        "Resumen": "A vulnerability in the implementation of SAML 2.0 single sign-on (SSO) for remote access VPN services in Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an authenticated, remote attacker to successfully establish a VPN session on an affected device. This vulnerability is due to improper separation of authorization domains when using SAML authentication. An attacker could exploit this vulnerability by using valid credentials to successfully authenticate using their designated connection profile (tunnel group), intercepting the SAML SSO token that is sent back from the Cisco ASA device, and then submitting the same SAML SSO token to a different tunnel group for authentication. A successful exploit could allow the attacker to establish a remote access VPN session using a connection profile that they are not authorized to use and connect to secured networks behind the affected device that they are not authorized to access. For successful exploitation, the attacker must have valid remote access VPN user credentials.  Published:  May 22, 2024; 1:16:13 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20293",
+        "Resumen": "A vulnerability in the activation of an access control list (ACL) on Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to bypass the protection that is offered by a configured ACL on an affected device. This vulnerability is due to a logic error that occurs when an ACL changes from inactive to active in the running configuration of an affected device. An attacker could exploit this vulnerability by sending traffic through the affected device that should be denied by the configured ACL. The reverse condition is also true—traffic that should be permitted could be denied by the configured ACL. A successful exploit could allow the attacker to bypass configured ACL protections on the affected device, allowing the attacker to access trusted networks that the device might be protecting. Note: This vulnerability applies to both IPv4 and IPv6 traffic as well as dual-stack ACL configurations in which both IPv4 and IPv6 ACLs are configured on an interface.  Published:  May 22, 2024; 1:16:13 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20261",
+        "Resumen": "A vulnerability in the file policy feature that is used to inspect encrypted archive files of Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to bypass a configured file policy to block an encrypted archive file. This vulnerability exists because of a logic error when a specific class of encrypted archive files is inspected. An attacker could exploit this vulnerability by sending a crafted, encrypted archive file through the affected device. A successful exploit could allow the attacker to send an encrypted archive file, which could contain malware and should have been blocked and dropped at the Cisco FTD device.  Published:  May 22, 2024; 1:16:12 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20389",
+        "Resumen": "A vulnerability in the ConfD CLI and the Cisco  Crosswork Network Services Orchestrator CLI could allow an authenticated, low-privileged, local attacker to read and write arbitrary files as root on the underlying operating system.\n\n\nThis vulnerability is due to improper authorization enforcement when specific CLI commands are used. An attacker could exploit this vulnerability by executing an affected CLI command with crafted arguments. A successful exploit could allow the attacker to read or write arbitrary files on the underlying operating system with the privileges of the root user.  Published:  May 16, 2024; 10:15:08 AM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20326",
+        "Resumen": "A vulnerability in the ConfD CLI and the Cisco  Crosswork Network Services Orchestrator CLI could allow an authenticated, low-privileged, local attacker to read and write arbitrary files as root on the underlying operating system.\n\n\nThis vulnerability is due to improper authorization enforcement when specific CLI commands are used. An attacker could exploit this vulnerability by executing an affected CLI command with crafted arguments. A successful exploit could allow the attacker to read or write arbitrary files on the underlying operating system with the privileges of the root user.  Published:  May 16, 2024; 10:15:08 AM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20394",
+        "Resumen": "A vulnerability in Cisco AppDynamics Network Visibility Agent could allow an unauthenticated, local attacker to cause a denial of service (DoS) condition on an affected device.\r\n\r This vulnerability is due to the inability to handle unexpected input. An attacker who has local device access could exploit this vulnerability by sending an HTTP request to the targeted service. A successful exploit could allow the attacker to cause a DoS condition by stopping the Network Agent Service on the local device.  Published:  May 15, 2024; 2:15:10 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20392",
+        "Resumen": "A vulnerability in the web-based management API of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an unauthenticated, remote attacker to conduct an HTTP response splitting attack. \r\n\r This vulnerability is due to insufficient input validation of some parameters that are passed to the web-based management API of the affected system. An attacker could exploit this vulnerability by persuading a user of an affected interface to click a crafted link. A successful exploit could allow the attacker to perform cross-site scripting (XSS) attacks, resulting in the execution of arbitrary script code in the browser of the targeted user, or could allow the attacker to access sensitive, browser-based information.  Published:  May 15, 2024; 2:15:10 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20391",
+        "Resumen": "A vulnerability in the Network Access Manager (NAM) module of Cisco Secure Client could allow an unauthenticated attacker with physical access to an affected device to elevate privileges to SYSTEM.\r\n\r This vulnerability is due to a lack of authentication on a specific function. A successful exploit could allow the attacker to execute arbitrary code with SYSTEM privileges on an affected device.  Published:  May 15, 2024; 2:15:10 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20383",
+        "Resumen": "A vulnerability in the Cisco Crosswork NSO CLI and the ConfD CLI could allow an authenticated, low-privileged, local attacker to elevate privileges to root on the underlying operating system.\r\n\r The vulnerability is due to an incorrect privilege assignment when specific CLI commands are used. An attacker could exploit this vulnerability by executing an affected CLI command. A successful exploit could allow the attacker to elevate privileges to root on the underlying operating system.  Published:  May 15, 2024; 2:15:09 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20369",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco Crosswork Network Services Orchestrator (NSO) could allow an unauthenticated, remote attacker to redirect a user to a malicious web page.\r\n\r\n\r This vulnerability is due to improper input validation of a parameter in an HTTP request. An attacker could exploit this vulnerability by persuading a user to click a crafted link. A successful exploit could allow the attacker to redirect a user to a malicious website.  Published:  May 15, 2024; 2:15:09 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20366",
+        "Resumen": "A vulnerability in the Tail-f High Availability Cluster Communications (HCC) function pack of Cisco Crosswork Network Services Orchestrator (NSO) could allow an authenticated, local attacker to elevate privileges to root on an affected device.\r\n\r This vulnerability exists because a user-controlled search path is used to locate executable files. An attacker could exploit this vulnerability by configuring the application in a way that causes a malicious file to be executed. A successful exploit could allow the attacker to execute arbitrary code on an affected device as the root user. To exploit this vulnerability, the attacker would need valid credentials on an affected device.  Published:  May 15, 2024; 2:15:09 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20258",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco AsyncOS Software for Cisco Secure Email and Web Manager and Secure Email Gateway could allow an unauthenticated, remote attacker to conduct an XSS attack against a user of the interface.\r\n\r This vulnerability is due to insufficient validation of user input. An attacker could exploit this vulnerability by persuading a user of an affected interface to click a crafted link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive, browser-based information.  Published:  May 15, 2024; 2:15:09 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20257",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco AsyncOS Software for Cisco Secure Email Gateway could allow an authenticated, remote attacker to conduct an XSS attack against a user of the interface.r\n\r This vulnerability is due to insufficient validation of user input. An attacker could exploit this vulnerability by persuading a user of an affected interface to click a crafted link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive, browser-based information.  Published:  May 15, 2024; 2:15:08 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20256",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco AsyncOS Software for Cisco Secure Email and Web Manager and Secure Web Appliance could allow an authenticated, remote attacker to conduct an XSS attack against a user of the interface.\r\n\rThis vulnerability is due to insufficient validation of user input. An attacker could exploit this vulnerability by persuading a user of an affected interface to click a crafted link. A successful exploit could allow the attacker to execute arbitrary script code in the context of the affected interface or access sensitive, browser-based information.  Published:  May 15, 2024; 2:15:08 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    },
+    {
+        "Producto": "cisco",
+        "Vuln ID": "CVE-2024-20378",
+        "Resumen": "A vulnerability in the web-based management interface of Cisco IP Phone firmware could allow an unauthenticated, remote attacker to retrieve sensitive information from an affected device.  \r\n\r This vulnerability is due to a lack of authentication for specific endpoints of the web-based management interface on an affected device. An attacker could exploit this vulnerability by connecting to the affected device. A successful exploit could allow the attacker to gain unauthorized access to the device, enabling the recording of user credentials and traffic to and from the affected device, including VoIP calls that could be replayed.  Published:  May 01, 2024; 1:15:28 PM -0400",
+        "Gravedad de CVSS": "V4.0: (not available)     V3.x: (not available)     V2.0: (not available)"
+    }
+]

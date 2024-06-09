@@ -1,0 +1,27 @@
+
+####how to install##### 
+#important: the repository must be in the home directory.#
+####installs the requirements#####
+
+pip install -r requirements.txt
+
+#####installs the google chrome#####
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
+#####run docker-compose#####
+
+docker-compose up -d
+
+#####the ports that this configuration uses are “80” “8080” “3306” keep this in mind if you have services on these ports#####
+
+#####open crontab #####
+
+crontab -e
+
+
+#####copy and paste the configuration of the file automatizaciones/crontab.txt you can edit the execution times as you wish and modify or delete the .log files.##### 
+
+###to add a new product use ###
+python3 vuls/Nuevo_producto.py

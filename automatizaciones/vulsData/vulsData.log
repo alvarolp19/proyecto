@@ -1,0 +1,14 @@
+Ejecutando bdtodos.sh...
+Ejecutando db.py en .
+Error al cargar la configuración: [Errno 2] No such file or directory: '../config.json'
+Finalizado
+Ejecutando db.py en ./cisco
+Conexión establecida correctamente.
+Se insertaron 20 registros.
+Conexión cerrada.
+Finalizado
+Ejecutando db.py en ./android
+Conexión establecida correctamente.
+Se insertaron 20 registros.
+Conexión cerrada.
+Finalizado

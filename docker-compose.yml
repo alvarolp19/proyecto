@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      app_network:
+        ipv4_address: 172.20.0.2
+    restart: always
+    labels:
+      - "com.example.service=db"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: ${MYSQL_ROOT_USER}
+      PMA_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    depends_on:
+      - db
+    networks:
+      app_network:
+        ipv4_address: 172.20.0.3
+    restart: always
+    labels:
+      - "com.example.service=phpmyadmin"
+
+  web:
+    build:
+      context: ./apache
+      dockerfile: Dockerfile  # Utilizar el Dockerfile personalizado
+    container_name: apache
+    ports:
+      - "80:80"
+    networks:
+      app_network:
+        ipv4_address: 172.20.0.4
+    restart: always
+    labels:
+      - "com.example.service=apache"
+
+volumes:
+  db_data:
+
+networks:
+  app_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+

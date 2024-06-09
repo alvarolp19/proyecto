@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Tendencias de Google</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Agrega estilos adicionales si es necesario */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Menú lateral -->
+        <nav class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="index.html">dashboard</a></li>
+                <li><a href="ramsome.php">Ransomware</a></li>
+                <li><a href="cyber.php">Cyber Attacks</a></li>
+                <li><a href="actors.php">Actors</a></li>
+                <li><a href="mapa.html">Incident Map</a></li>
+                <li><a href="incidents-by-actor.php">Incidents by Actor</a></li>
+                <li><a href="incidents-by-country.php">Incidents by Country</a></li>
+                <li><a href="exploit.php">Recent Exploits</a></li>
+                <li><a href="vuls.php">Vulnerabilities</a></li>
+                <li><a href="trends.html">trends</a></li>
+            </ul>
+        </nav>
+        <!-- Contenido principal -->
+        <main class="content">
+            <h2>Explorador de Tendencias de Google</h2>
+            <!-- Agrega el script de Google Trends -->
+            <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/3728_RC01/embed_loader.js"></script>
+            <script type="text/javascript">
+                trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"CVE","geo":"","time":"now 7-d"}],"category":0,"property":""}, {"exploreQuery":"date=now%207-d&q=CVE&hl=es","guestPath":"https://trends.google.es:443/trends/embed/"});
+            </script>
+            <!-- Fin del script de Google Trends -->
+        </main>
+    </div>
+</body>
+</html>
+

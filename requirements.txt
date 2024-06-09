@@ -1,0 +1,10 @@
+html-table-parser-python3
+mysql-connector-python
+python-dotenv
+selenium
+webdriver-manager
+pandas
+folium
+geopy
+pycountry
+
