@@ -41,141 +41,110 @@
 </head>
 <body>
     <div class="container">
-        <nav class="sidebar">
+    <nav class="sidebar">
+            
             <ul>
-                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="index.html">dashboard</a></li>
                 <li><a href="ramsome.php">Ransomware</a></li>
-                <li><a href="cyber.php">Ciberataques</a></li>
-                <li><a href="actors.php">Actores</a></li>
-                <li><a href="mapa.html">Mapa de Incidentes</a></li>
-                <li><a href="incidents-by-actor.php">Incidentes por Actor</a></li>
-                <li><a href="incidents-by-country.php">Incidentes por País</a></li>
-                <li><a href="exploit.php">Exploits Recientes</a></li>
-                <li><a href="vuls.php">Vulnerabilidades</a></li>
-                <li><a href="trends.html">Tendencias</a></li>
+                <li><a href="cyber.php">Cyber Attacks</a></li>
+                <li><a href="actors.php">Actors</a></li>
+                <li><a href="mapa.html">Incident Map</a></li>
+                <li><a href="incidents-by-actor.php">Incidents by Actor</a></li>
+                <li><a href="incidents-by-country.php">Incidents by Country</a></li>
+                <li><a href="exploit.php">Recent Exploits</a></li>
+                <li><a href="vuls.php">Vulnerabilities</a></li>
+                <li><a href="trends.html">trends</a></li>
             </ul>
         </nav>
         <main class="content">
-            <?php
-            // Conexión a la base de datos
-            $servername = "db";
-            $username = "root";
-            $password = "root";
-            $dbname = "ramsome";
+            <h2>Listado de Actores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Dirección</th>
+                        <th>Número de Incidentes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    // Conexión a la base de datos
+                    $servername = "db";
+                    $username = "root";
+                    $password = "root";
+                    $dbname = "ramsome";
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
-            }
-
-            if (isset($_GET['actor_id'])) {
-                // Mostrar incidentes del actor seleccionado
-                $actor_id = intval($_GET['actor_id']);
-                $sql = "SELECT Actores.nombre AS actor_nombre, Incidentes.fecha, Incidentes.victima, Incidentes.Pais_Victima
-                        FROM Incidentes
-                        INNER JOIN Actores ON Incidentes.actor_id = Actores.id
-                        WHERE Actores.id = $actor_id";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    echo "<h2>Incidentes del Actor</h2>";
-                    echo "<table>";
-                    echo "<thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Víctima</th>
-                                <th>País de la Víctima</th>
-                            </tr>
-                          </thead>
-                          <tbody>";
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                                <td>" . $row["fecha"] . "</td>
-                                <td>" . $row["victima"] . "</td>
-                                <td>" . $row["Pais_Victima"] . "</td>
-                              </tr>";
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    if ($conn->connect_error) {
+                        die("Conexión fallida: " . $conn->connect_error);
                     }
-                    echo "</tbody></table>";
-                } else {
-                    echo "<h2>No se encontraron incidentes para este actor.</h2>";
-                }
-                echo "<p><a href='actors.php'>Volver al listado de actores</a></p>";
-            } else {
-                // Mostrar listado de actores
-                $sql = "SELECT Actores.id, Actores.nombre, IFNULL(Actores.url, 'No disponible') AS direccion, COUNT(Incidentes.id) AS num_incidentes 
-                        FROM Actores 
-                        LEFT JOIN Incidentes ON Actores.id = Incidentes.actor_id 
-                        GROUP BY Actores.id";
-                $result = $conn->query($sql);
 
-                if ($result->num_rows > 0) {
-                    echo "<h2>Listado de Actores</h2>";
-                    echo "<table>";
-                    echo "<thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Dirección</th>
-                                <th>Número de Incidentes</th>
-                            </tr>
-                          </thead>
-                          <tbody>";
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr>
-                                <td><a href='?actor_id=" . $row["id"] . "'>" . $row["nombre"] . "</a></td>
-                                <td>" . $row["direccion"] . "</td>
-                                <td>" . $row["num_incidentes"] . "</td>
-                              </tr>";
+                    // Consulta SQL para obtener el listado de actores y sus direcciones
+                    $sql = "SELECT Actores.nombre, IFNULL(Actores.url, 'No disponible') AS direccion, COUNT(Incidentes.id) AS num_incidentes 
+                            FROM Actores 
+                            LEFT JOIN Incidentes ON Actores.id = Incidentes.actor_id 
+                            GROUP BY Actores.id";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // Mostrar listado de actores, sus direcciones y número de incidentes
+                        while($row = $result->fetch_assoc()) {
+                            echo "<tr>
+                                    <td>" . $row["nombre"] . "</td>
+                                    <td>" . $row["direccion"] . "</td>
+                                    <td>" . $row["num_incidentes"] . "</td>
+                                  </tr>";
+                        }
+
+                        // Obtener datos para la gráfica
+                        $labels = [];
+                        $data = [];
+                        $result->data_seek(0);
+                        while($row = $result->fetch_assoc()) {
+                            if ($row["num_incidentes"] > 0) {
+                                $labels[] = $row["nombre"];
+                                $data[] = $row["num_incidentes"];
+                            }
+                        }
+                    } else {
+                        echo "<tr><td colspan='3'>No se encontraron actores</td></tr>";
                     }
-                    echo "</tbody></table>";
+                    $conn->close();
+                    ?>
+                </tbody>
+            </table>
 
-                    // Obtener datos para la gráfica
-                    $labels = [];
-                    $data = [];
-                    $result->data_seek(0);
-                    while($row = $result->fetch_assoc()) {
-                        if ($row["num_incidentes"] > 0) {
-                            $labels[] = $row["nombre"];
-                            $data[] = $row["num_incidentes"];
+            <?php if (!empty($labels)): ?>
+            <div class="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+            <script>
+                // Crear la gráfica con Chart.js
+                var ctx = document.getElementById('chart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: <?php echo json_encode($labels); ?>,
+                        datasets: [{
+                            label: 'Número de Incidentes por Actor',
+                            data: <?php echo json_encode($data); ?>,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
                         }
                     }
-
-                    if (!empty($labels)) {
-                        echo "<div class='chart-container'>
-                                <canvas id='chart'></canvas>
-                              </div>
-                              <script>
-                                  // Crear la gráfica con Chart.js
-                                  var ctx = document.getElementById('chart').getContext('2d');
-                                  var chart = new Chart(ctx, {
-                                      type: 'bar',
-                                      data: {
-                                          labels: " . json_encode($labels) . ",
-                                          datasets: [{
-                                              label: 'Número de Incidentes por Actor',
-                                              data: " . json_encode($data) . ",
-                                              backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                                              borderColor: 'rgba(54, 162, 235, 1)',
-                                              borderWidth: 1
-                                          }]
-                                      },
-                                      options: {
-                                          scales: {
-                                              yAxes: [{
-                                                  ticks: {
-                                                      beginAtZero: true
-                                                  }
-                                              }]
-                                          }
-                                      }
-                                  });
-                              </script>";
-                    }
-                } else {
-                    echo "<h2>No se encontraron actores</h2>";
-                }
-            }
-            $conn->close();
-            ?>
+                });
+            </script>
+            <?php endif; ?>
         </main>
     </div>
 </body>
