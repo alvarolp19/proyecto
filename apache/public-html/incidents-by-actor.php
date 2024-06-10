@@ -69,7 +69,7 @@
 <body>
     <div class="container">
     <nav class="sidebar">
-            <h2>Menú</h2>
+            
             <ul>
                 <li><a href="index.html">dashboard</a></li>
                 <li><a href="ramsome.php">Ransomware</a></li>
