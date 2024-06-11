@@ -24,7 +24,7 @@ crontab -e
 
 # Copia y pega la configuración del archivo automatizaciones/crontab.txt.
 # Puedes editar los tiempos de ejecución según tus necesidades y modificar o eliminar los archivos .log.
-#para añadir un nuevo producto usa el siguente comando
+# para añadir un nuevo producto usa el siguente comando
 python3 vuls/Nuevo_producto.py
 
 
