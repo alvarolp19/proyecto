@@ -2,8 +2,7 @@
 Herramienta para la recolección y análisis de datos recopilados de fuentes OSINT"
 Recopila datos sobre incidentes de ransomware, actores, exploits, ciberataques, vulnerabilidades de los productos que añadas y tendencias mediante Google
 ## Estructura
-
-  <a href="https://github.com/alvarolp19/proyecto/tfg.png"><img src="./tfg.png" alt="OpenCTI"></a>
+  <a href="https://github.com/alvarolp19/proyecto/blob/main/tfg.png"><img src="./tfg.png" alt="OpenCTI"></a>
 ### Cómo Instalar
 
 Es importante tener en cuenta que el repositorio debe estar ubicado en el directorio raíz.
