@@ -3,6 +3,7 @@ Herramienta para la recolección y análisis de datos recopilados de fuentes OSI
 Recopila datos sobre incidentes de ransomware, actores, exploits, ciberataques, vulnerabilidades de los productos que añadas y tendencias mediante Google
 ## Instalación
 
+![tfg](imagenes/tfg.png)
 ### Cómo Instalar
 
 Es importante tener en cuenta que el repositorio debe estar ubicado en el directorio raíz.
@@ -25,6 +26,5 @@ crontab -e
 # Puedes editar los tiempos de ejecución según tus necesidades y modificar o eliminar los archivos .log.
 # para añadir un nuevo producto usa el siguente comando
 python3 vuls/Nuevo_producto.py
-
 
 
