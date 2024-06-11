@@ -1,9 +1,9 @@
 # Osint-Scrapy
 Herramienta para la recolección y análisis de datos recopilados de fuentes OSINT"
 Recopila datos sobre incidentes de ransomware, actores, exploits, ciberataques, vulnerabilidades de los productos que añadas y tendencias mediante Google
-## Instalación
+## Estructura
 
-![tfg](imagenes/tfg.png)
+  <a href="https://opencti.io"><img src="./tfg.png" alt="OpenCTI"></a>
 ### Cómo Instalar
 
 Es importante tener en cuenta que el repositorio debe estar ubicado en el directorio raíz.
