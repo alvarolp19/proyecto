@@ -368,6 +368,8 @@ INSERT INTO Actores (nombre, url) VALUES
 
 ('Ech0Raix', 'http://veqlxhq7ub5qze3qy56zx2cig2e6tzsgxdspkubwbayqije6oatma6id.onion'),
 
+('El Dorador', 'http://dataleakypypu7uwblm5kttv726l3iripago6p336xjnbstkjwrlnlid.onion/ '),
+
 ('Embargo', 'http://embargobe3n5okxyzqphpmk3moinoap2snz5k6765mvtkk7hhi544jid.onion'),
 
 ('Endurance', 'http://h44jyyfomcbnnw5dha7zgwgkvpzbzbdyx2onu4fxaa5smxrgbjgq7had.onion/'),
@@ -393,7 +395,9 @@ INSERT INTO Actores (nombre, url) VALUES
 ('Groove', 'http://ws3dh6av66sjbxxkjpw5ao3wqzmtejnkzheswm4dz5rrwvular7xvkqd.onion/'),
 
 ('Hades', 'http://ixltdyumdlthrtgx.onion'),
-
+  
+('Handala', 'https://handala.to/ '),
+  
 ('Haron', 'http://ft4zr2jzlqoyob7yg4fcpwyt37hox3ajajqnfkdvbfrkjioyunmqnpad.onion/login.php'),
 
 ('Hellogookie', 'http://gookie256cvccntvenyxrvn7ht73bs6ss3oj2ocfkjt5y6vq6gfi2tad.onion/'),
@@ -573,6 +577,8 @@ INSERT INTO Actores (nombre, url) VALUES
 ('Rransom', 'http://t2tqvp4pctcr7vxhgz5yd5x4ino5tw7jzs3whbntxirhp32djhi7q3id.onion'),
 
 ('Sabbath', 'http://54bb47h.blog'),
+  
+('Sensayq', ' http://gmixcebhni6c3kcf5m7xxybomaphj7pizoqtxiqmrz5wsh6g6x5s2wqd.onion/ '),
 
 ('Shadow', 'http://lc65fb3wrvox6xlyn4hklwjcojau55diqxxylqs4qsfng23ftzijnxad.onion'),
 
