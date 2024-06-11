@@ -68,8 +68,9 @@
 
             // Consulta SQL para obtener los incidentes
             $sql = "SELECT ciber.fecha, ciber.victima, ciber.enlace, paises_completos.pais_nombre
-                    FROM ciber
-                    JOIN paises_completos ON ciber.pais = paises_completos.pais";
+        FROM ciber
+        JOIN paises_completos ON ciber.pais = paises_completos.pais
+        ORDER BY ciber.fecha DESC";
             $result = $conn->query($sql);
 
             echo "<table>
