@@ -1,5 +1,5 @@
 # Osint-Scrapy
-Herramienta para la recolección y análisis de datos recopilados de fuentes OSINT"
+Herramienta para la recolección y análisis de datos recopilados de fuentes "OSINT"
 Recopila datos sobre incidentes de ransomware, actores, exploits, ciberataques, vulnerabilidades de los productos que añadas y tendencias mediante Google
 ## Estructura
   <a href="https://github.com/alvarolp19/proyecto/blob/main/tfg.png"><img src="./tfg.png" alt="OpenCTI"></a>
